@@ -5,10 +5,11 @@ import App from "./App";
 import Router from "./Router";
 import CoursesContextProvider from "./contexts/CoursesContext";
 import CartContextProvider from "./contexts/CartContext";
+import { HelmetProvider } from "react-helmet-async";
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
-  <StrictMode>
+  <HelmetProvider>
     <CartContextProvider>
       <CoursesContextProvider>
         <BrowserRouter>
@@ -18,6 +19,6 @@ ReactDOM.render(
         </BrowserRouter>
       </CoursesContextProvider>
     </CartContextProvider>
-  </StrictMode>,
+    </HelmetProvider>,
   rootElement
 );
