@@ -8,7 +8,7 @@ const ModuleTopCategoryArea = () => {
           <div class="col-12 col-sm-6 col-md-4">
             <div
               class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
-              style={{ backgroundImage: "url(assets/img/bg-img/bg-2.jpg)" }}
+              style={{ backgroundImage: "url(https://rawcdn.githack.com/MariaRaykova/e-learning-react-frontend/d57bd0f59dfcfea8968ee56166d51180501ff946/public/assets/img/bg-img/bg-2.jpg)" }}
             >
               <div class="catagory-content">
                 <a href="#">Face</a>
@@ -19,7 +19,7 @@ const ModuleTopCategoryArea = () => {
           <div class="col-12 col-sm-6 col-md-4">
             <div
               class="single_catagory_area d-flex align-items-center justify-content-center bg-img"
-              style={{ backgroundImage: "url(assets/img/bg-img/bg-3.jpg)" }}
+              style={{ backgroundImage: "url(https://rawcdn.githack.com/MariaRaykova/e-learning-react-frontend/d57bd0f59dfcfea8968ee56166d51180501ff946/public/assets/img/bg-img/bg-3.jpg)" }}
             >
               <div class="catagory-content">
                 <a href="#">Body</a>

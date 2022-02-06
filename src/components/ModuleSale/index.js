@@ -8,7 +8,7 @@ const ModuleSale = () => {
           <div class="col-12">
             <div
               class="cta-content bg-img background-overlay"
-              style={{ backgroundImage: "url(../../../public/assets/img/bg-img/bg-1.jpg)" }}
+              style={{ backgroundImage: "url(https://rawcdn.githack.com/MariaRaykova/e-learning-react-frontend/d57bd0f59dfcfea8968ee56166d51180501ff946/public/assets/img/bg-img/bg-1.jpg)" }}
             >
               <div class="h-100 d-flex align-items-center justify-content-end">
                 <div class="cta--text">

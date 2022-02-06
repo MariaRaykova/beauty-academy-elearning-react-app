@@ -3,8 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 // import Cookie from "js-cookie";
 import { CartContext } from "../../contexts/CartContext";
 import AuthContext from "../../contexts/AuthContext";
+import bag from "../../img/core-img/bag.svg"
+import userimg from "../../img/core-img/user.svg"
+import heart from "../../img/core-img/heart.svg"
+import bg6 from "../../img/bg-img/bg-6.jpg"
 
 const Header = () => {
+
   const { itemCount } = useContext(CartContext);
   const { user, setUser } = useContext(AuthContext);
   const history = useNavigate();
@@ -134,7 +139,7 @@ const Header = () => {
 
                     {/* Picture */}
                     <div class="single-mega cn-col-4">
-                      <img src="../../../public/assets/img/bg-img/bg-6.jpg" alt="" />
+                      <img src={bg6} alt="" />
                     </div>
                   </div>
                 </li>
@@ -191,7 +196,7 @@ const Header = () => {
 
           <div class="favourite-area">
             <a href="#">
-              <img src="assets/img/core-img/heart.svg" alt="" />
+              <img src={heart} alt="" />
             </a>
           </div>
 
@@ -217,7 +222,7 @@ const Header = () => {
               </div>
             ) : (
               <Link to="/login">
-                <img src="assets/img/core-img/user.svg" alt="" />
+                <img src={userimg} alt="" />
                 {/* Sign in */}
               </Link>
             )}
@@ -225,7 +230,7 @@ const Header = () => {
 
           <div class="cart-area">
             <Link to="/cart" class="snipcart-checkout">
-              <img src="assets/img/core-img/bag.svg" alt="" />
+              <img src={bag} alt="" />
               <span class="snipcart-items-count">{itemCount}</span>
             </Link>
           </div>
