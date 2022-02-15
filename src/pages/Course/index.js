@@ -13,14 +13,14 @@ const Course = () => {
   const params = useParams();
   const course_id = params.id;
   const { courses } = useContext(CoursesContext);
-  const course = courses[course_id].attributes;
-  console.log("course" + JSON.stringify(course));
+  const course = courses[course_id]?.attributes;
+
   const { addCourse, cartItems, increase } = useContext(CartContext);
 
   const isInCart = (course) => {
     return !!cartItems.find((item) => item.id === course.id);
   };
-  const imageUrl = fromImageToUrl(course.course_image.data.attributes.url);
+  const imageUrl = fromImageToUrl(course?.course_image?.data?.attributes.url);
   return (
     <PageWrapper>
       <section>
@@ -29,7 +29,7 @@ const Course = () => {
             style={{
               display: "block",
               margin: "0 auto 10px",
-              maxHeight: "200px"
+            height: "200px"
             }}
             className="img-fluid"
             src={`${imageUrl}`}
@@ -51,14 +51,16 @@ const Course = () => {
           </div>
         </div>
         <div class="product-description">
-          <p>{course.course_name}</p>
-          <div className="text-right">{course.course_short_description}</div>
-          <h3 className="text-left">{formatNumber(course.course_price)}</h3>
+          <p>{course?.course_name}</p>
+          <div className="text-right">{course?.course_short_description}</div>
+          <h3 className="text-left">{formatNumber(course?.course_price)}</h3>
           <div className="text-right">
             <Link to="/" className="btn btn-link btn-sm mr-2">
               Details
             </Link>
           </div>
+          
+        </div>
           {/* {isInCart(course) && (
             <button
               onClick={() => increase(course)}
@@ -78,20 +80,20 @@ const Course = () => {
               data-item-description={course.course_short_description}
               data-item-min-quantity="0"
               // data-item-max-quantity={course.attributes.quantity}
-              data-item-id={course.id}
+              data-item-id={course_id}
               data-item-url={imageUrl}
             >
               Add to cart
             </button>
           )}
+          <h5>Are you ready to pass the certification exam you've been studying for? Press start... </h5>
           <Link
             className="snipcart-add-item btn btn-outline-danger btn-sm"
-            to={`/course/${course_id}`}
+            to={`/course/test/1`}
             key={course_id}
           >
-            Test
+            Start Test
           </Link>
-        </div>
       </section>
       {/* <div className="quiz-body">
         <div className="quiz">

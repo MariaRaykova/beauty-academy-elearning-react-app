@@ -22,12 +22,12 @@ const Quiz = () => {
     res
       .json()
       .then((res) => {
-        // console.log(
-        //   JSON.stringify(
-        //     res.data.attributes.test.data.attributes?.questions?.data
-        //   )
-        // );
-        setQuestions(res.data.attributes.test.data.attributes?.questions?.data);
+        console.log(
+          JSON.stringify(
+            res.data.attributes.test.data
+          )
+        );
+        setQuestions(res?.data?.attributes.test?.data.attributes?.questions?.data);
       })
       .catch((err) => setErrors("error :", err));
   };
@@ -57,7 +57,7 @@ const Quiz = () => {
       );
     }
   };
-  console.log("loading " + questions);
+
   const showQuestions = () => {
     if (questions?.length < 0) {
       // setLoading(false);
@@ -69,18 +69,18 @@ const Quiz = () => {
               <span>Question {currentQuestion + 1}</span>/{questions?.length}
             </div>
             <div className="question-text">
-              {questions[currentQuestion].attributes.question}
+              {questions[currentQuestion]?.attributes.question}
             </div>
           </div>
           <div className="answer-section">
-            {questions[currentQuestion].attributes.answers.data.map((data) => (
+            {questions[currentQuestion]?.attributes.answers.data.map((data) => (
               <button
                 className="quiz-button"
                 onClick={() =>
-                  handleAnswerOptionClick(data.attributes.isCorrect)
+                  handleAnswerOptionClick(data?.attributes.isCorrect)
                 }
               >
-                {data.attributes.answer}
+                {data?.attributes.answer}
               </button>
             ))}
           </div>
@@ -108,19 +108,19 @@ const Quiz = () => {
                         {questions?.length}
                       </div>
                       <div className="question-text">
-                        {questions[currentQuestion].attributes.question}
+                        {questions[currentQuestion]?.attributes.question}
                       </div>
                     </div>
                     <div className="answer-section">
-                      {questions[currentQuestion].attributes.answers.data.map(
+                      {questions[currentQuestion]?.attributes.answers.data.map(
                         (data) => (
                           <button
                             className="quiz-button"
                             onClick={() =>
-                              handleAnswerOptionClick(data.attributes.isCorrect)
+                              handleAnswerOptionClick(data?.attributes.isCorrect)
                             }
                           >
-                            {data.attributes.answer}
+                            {data?.attributes.answer}
                           </button>
                         )
                       )}

@@ -9,11 +9,11 @@ export const sumItems = (cartItems) => {
   Storage(cartItems);
 
   let itemCount = cartItems.reduce(
-    (total, course) => total + course.quantity,
+    (total, course) => total + course?.quantity,
     0
   );
   let total = cartItems.reduce(
-    (total, course) => total + course.attributes.course_price * course.quantity,
+    (total, course) => total + course?.attributes?.course_price * course?.quantity,
     0
   );
   return { itemCount, total };

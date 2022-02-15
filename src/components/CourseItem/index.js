@@ -71,12 +71,12 @@ const CourseItem = ({ course }) => {
             type="button"
             onClick={() => addCourse(course)}
             className="snipcart-add-item btn btn-outline-danger btn-sm"
-            data-item-name={course?.attributes.course_name}
-            data-item-price={course?.attributes.course_price}
-            data-item-description={course?.attributes.course_short_description}
+            data-item-name={course.attributes.course_name}
+            data-item-price={course.attributes.course_price}
+            data-item-description={course.attributes.course_short_description}
             data-item-min-quantity="0"
             // data-item-max-quantity={course.attributes.quantity}
-            data-item-id={course?.id}
+            data-item-id={course.id}
             data-item-url={imageUrl}
           >
             Add to cart

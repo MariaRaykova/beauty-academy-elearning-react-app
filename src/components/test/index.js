@@ -39,7 +39,6 @@ const Test = ({ quiz }) => {
     res
       .json()
       .then((res) => {
-        console.log("test" + res.data);
         setTest(res.data);
         console.log("success", res);
       })
@@ -50,7 +49,6 @@ const Test = ({ quiz }) => {
     res
       .json()
       .then((res) => {
-        console.log("questions" + res.data);
         setQuestions(res.data);
         console.log("success", res);
       })
